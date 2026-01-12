@@ -797,6 +797,31 @@ body {
         gap: 2rem;
     }
 
+    .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-icon {
+        margin: 0 auto;
+    }
+
+    .contact-item h4 {
+        text-align: center;
+    }
+
+    .contact-item p {
+        text-align: center;
+    }
+
+    .contact-item > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
     .contact-form {
         padding: 2rem;
     }
@@ -804,6 +829,20 @@ body {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        display: flex;
     }
 }
 
@@ -858,10 +897,40 @@ body {
     .contact-item {
         flex-direction: column;
         text-align: center;
+        align-items: center;
     }
 
     .contact-icon {
         margin: 0 auto;
+    }
+
+    .contact-item h4 {
+        text-align: center;
+    }
+
+    .contact-item p {
+        text-align: center;
+    }
+
+    .contact-item > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+        display: flex;
     }
 }
 
@@ -893,7 +962,7 @@ html {
     animation-delay: 0.4s;
 }
 
-/* Asegurar que la imagen biométrica siempre sea visible */
+
 .product-image {
     opacity: 1 !important;
     visibility: visible !important;
