@@ -56,13 +56,10 @@ body {
     align-items: center;
 }
 
-.logo h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #2563eb, #60a5fa, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo-nav {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
 }
 
 .nav-menu {
@@ -116,7 +113,7 @@ body {
     margin-top: 80px;
     height: 90vh;
     min-height: 600px;
-    background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #60a5fa 100%);
+    background: #000b28;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +140,17 @@ body {
     z-index: 1;
     max-width: 800px;
     padding: 0 20px;
+    text-align: center;
     animation: fadeInUp 0.8s ease-out;
 }
+
+.hero-logo {
+    width: 250px;
+    max-width: 90%;
+    margin: 20px auto 30px;
+    display: block;
+}
+
 
 .hero-title {
     font-size: 3.5rem;
@@ -169,12 +175,36 @@ body {
     border-radius: 50px;
     transition: var(--transition);
     box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
 }
 
 .cta-button:hover {
+    background: var(--primary-color);
+    color: var(--white);
     transform: translateY(-3px);
-    box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 30px -5px rgba(37, 99, 235, 0.35);
 }
+
+
+.cta-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.5s;
+}
+
+.cta-button:hover::after {
+    left: 100%;
+}
+
 
 /* Products Section */
 .products {
@@ -212,7 +242,7 @@ body {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -237,6 +267,7 @@ body {
     height: 300px;
     overflow: hidden;
     background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
+   aspect-ratio: 1 / 1; 
 }
 
 .product-image {
@@ -268,6 +299,18 @@ body {
     opacity: 1;
     visibility: visible;
 }
+
+.product-image,
+.product-image-hover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
 
 .product-image-container:hover .product-image {
     opacity: 1;
@@ -597,28 +640,56 @@ body {
 }
 
 .submit-button {
+    display: inline-block;
     width: 100%;
-    padding: 1rem 2rem;
-    background: linear-gradient(135deg, #1e40af, #2563eb, #60a5fa);
+    padding: 1rem 2.5rem;
+    background: var(--primary-color);
+    /* fondo base azul */
     color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem;
     border: none;
     border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
     transition: var(--transition);
     box-shadow: var(--shadow);
 }
 
 .submit-button:hover {
-    transform: translateY(-2px);
+    background: var(--primary-light);
+    /* azul más claro al hover */
+    transform: translateY(-3px);
     box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, #2563eb, #3b82f6, #93c5fd);
+}
+
+/* efecto de brillo deslizante */
+.submit-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transition: left 0.5s;
+}
+
+.submit-button:hover::after {
+    left: 100%;
 }
 
 .submit-button:active {
+    background: var(--primary-dark);
+    /* azul más oscuro al click */
     transform: translateY(0);
 }
+
 
 .form-message {
     margin-top: 1rem;
@@ -699,6 +770,7 @@ body {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -815,7 +887,7 @@ body {
         text-align: center;
     }
 
-    .contact-item > div {
+    .contact-item>div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -912,7 +984,7 @@ body {
         text-align: center;
     }
 
-    .contact-item > div {
+    .contact-item>div {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1006,9 +1078,11 @@ html {
     0% {
         box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     }
+
     50% {
         box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6);
     }
+
     100% {
         box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
     }
@@ -1031,14 +1105,14 @@ html {
 
 @media (max-width: 480px) {
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
         bottom: 10px;
         right: 10px;
     }
 
     .whatsapp-icon {
-        width: 28px;
-        height: 28px;
+        width: 70px;
+        height: 70px;
     }
 }
