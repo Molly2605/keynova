@@ -267,7 +267,7 @@ body {
     height: 300px;
     overflow: hidden;
     background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
-   aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
 }
 
 .product-image {
@@ -387,49 +387,112 @@ body {
 }
 
 /* Features Section */
+
 .features {
     padding: 5rem 0;
-    background: linear-gradient(180deg, #f1f5f9 0%, #ffffff 100%);
+    background: #f8fafc;
 }
 
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* Grid */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
     margin-top: 3rem;
 }
 
-.feature-item {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 15px;
-    transition: var(--transition);
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-    border: 2px solid transparent;
+/* Card base */
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.8rem;
+    border-radius: 16px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-    background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
-    border-color: var(--primary-color);
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icono (imagen) */
+.feature-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
 }
 
 .feature-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
-.feature-item h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
+/* Línea divisoria */
+.feature-divider {
+    width: 1px;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.25);
 }
 
-.feature-item p {
-    color: var(--text-light);
-    font-size: 0.95rem;
+/* Texto */
+.feature-content h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
 }
+
+.feature-content p {
+    font-size: 0.9rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Colores */
+.feature-card.blue {
+    background: #1e40af;
+}
+
+.feature-card.orange {
+    background: #f59e0b;
+}
+
+.feature-card.cyan {
+    background: #0ea5e9;
+}
+
+.feature-card.dark {
+    background: #334155;
+}
+
+/* Colores */
+.feature-card.blue {
+    background: #1e40af;
+}
+
+.feature-card.orange {
+    background: #f59e0b;
+}
+
+.feature-card.cyan {
+    background: #0ea5e9;
+}
+
+.feature-card.dark {
+    background: #334155;
+}
+
 
 /* Team Section */
 .team {
