@@ -15,13 +15,8 @@
     --secondary-color: #60a5fa;
     --accent-blue: #1d4ed8;
     --accent-sky: #0ea5e9;
-    /* NUEVO */
     --accent-amber: #f59e0b;
-    /* NUEVO */
-
-    /* Neutrals */
     --dark-slate: #334155;
-    /* NUEVO */
     --text-dark: #1e293b;
     --text-light: #64748b;
     --text-muted: #94a3b8;
@@ -569,123 +564,6 @@ body {
 }
 
 
-/* Team Section */
-.team {
-    padding: 5rem 0;
-    background: linear-gradient(180deg, var(--white) 0%, var(--bg-light) 100%);
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.team-member {
-    background: var(--white);
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-    text-align: center;
-}
-
-.team-member:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
-}
-
-.team-image-container {
-    position: relative;
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
-}
-
-.team-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.team-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-            rgba(30, 64, 175, 0.9),
-            rgba(14, 165, 233, 0.9));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.team-member:hover .team-overlay {
-    opacity: 1;
-}
-
-.team-member:hover .team-image {
-    transform: scale(1.1);
-}
-
-.team-social {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.team-social a {
-    color: var(--white);
-    transition: var(--transition);
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    backdrop-filter: blur(10px);
-}
-
-.team-social a:hover {
-    background: rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
-}
-
-.team-social svg {
-    width: 20px;
-    height: 20px;
-}
-
-.team-info {
-    padding: 2rem;
-}
-
-.team-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-dark);
-}
-
-.team-role {
-    color: var(--accent-sky);
-    font-weight: 600;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-}
-
-.team-bio {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
 /* Contact Section */
 .contact {
     padding: 5rem 0;
@@ -1110,6 +988,11 @@ body {
     .product-info {
         min-height: auto;
         padding: 0.35rem 0.5rem;
+    }
+
+    .product-image-container.active .product-image-hover {
+        opacity: 1;
+        visibility: visible;
     }
 
     .product-image-container:active .product-image-hover,

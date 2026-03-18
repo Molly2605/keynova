@@ -79,20 +79,7 @@ document.querySelectorAll('.product-image').forEach(img => {
     img.style.display = 'block';
 });
 
-// Product card hover enhancement for touch devices
-const productCards = document.querySelectorAll('.product-card');
 
-productCards.forEach(card => {
-    const overlay = card.querySelector('.product-overlay');
-    
-    // For touch devices, show overlay on tap
-    card.addEventListener('touchstart', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            overlay.style.opacity = overlay.style.opacity === '1' ? '0' : '1';
-        }
-    });
-});
 
 // Buy button click handler
 document.querySelectorAll('.buy-button').forEach(button => {
